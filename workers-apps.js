@@ -1,7 +1,6 @@
-// Redesigned by https://telegram.dog/c7yinfobot which was written by someone else, credits are given on Source Page.
+// Redesigned by telegram.dog/TheFirstSpeedster at https://www.npmjs.com/package/@googledrive/index which was written by someone else, credits are given on Source Page.
 // v2.2.3
 // Initialize the page
-
 function init() {
     document.siteName = $('title').html();
     var html = `<header>
@@ -34,7 +33,7 @@ function init() {
 }
 
 const Os = {
-    isWindows: navigator.platform.toUpperCase().indexOf('WIN') > -1,  .includes
+    isWindows: navigator.platform.toUpperCase().indexOf('WIN') > -1, // .includes
     isMac: navigator.platform.toUpperCase().indexOf('MAC') > -1,
     isMacLike: /(Mac|iPhone|iPod|iPad)/i.test(navigator.platform),
     isIos: /(iPhone|iPod|iPad)/i.test(navigator.platform),
@@ -526,7 +525,21 @@ function append_files_to_list(path, files) {
         }
     }
 
-
+    /*let targetObj = {};
+    targetFiles.forEach((myFilepath, myIndex) => {
+        if (!targetObj[myFilepath]) {
+            targetObj[myFilepath] = {
+                filepath: myFilepath,
+                prev: myIndex === 0 ? null : targetFiles[myIndex - 1],
+                next: myIndex === targetFiles.length - 1 ? null : targetFiles[myIndex + 1],
+            }
+        }
+    })
+    // console.log(targetObj)
+    if (Object.keys(targetObj).length) {
+        localStorage.setItem(path, JSON.stringify(targetObj));
+        // console.log(path)
+    }*/
 
     if (targetFiles.length > 0) {
         let old = localStorage.getItem(path);
@@ -578,7 +591,12 @@ function render_search_result_list() {
     $('#readme_md').hide().html('');
     $('#head_md').hide().html('');
 
-
+    /**
+     * Callback after successful search request returns data
+     * The result returned by @param res (object)
+     * @param path the requested path
+     * @param prevReqParams parameters used in request
+     */
     function searchSuccessCallback(res, prevReqParams) {
 
         // Temporarily store nextPageToken and currentPageIndex in the list element
