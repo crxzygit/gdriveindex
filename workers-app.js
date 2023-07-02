@@ -1,3 +1,6 @@
+// Redesigned by https://telegram.dog/c7yinfobot which was written by someone else, credits are given on Source Page.
+// v2.2.3
+// Initialize the page
 
 function init() {
     document.siteName = $('title').html();
