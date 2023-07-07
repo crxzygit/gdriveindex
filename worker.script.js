@@ -440,11 +440,10 @@ function list(path) {
             var pass = prompt("Buy lifetime password from @C7YinfoBot on Telegram, PRICE 1999₹\n\nPayment acceped via Amazon/Play Store Gift Card only! **NO UPI**\n\nLocked, Please enter the password :\n", "https://telegram.dog/C7YinfoBot");
             //var pass = prompt("Directory encryption, please enter the password", "");
             localStorage.setItem('password' + path, pass);
-            if (pass != null && pass != "" && pass == "https://telegram.dog/C7YinfoBot") {
+            if (pass != null && pass != "") {
                 list(path);
             } else {
                 history.go(-1);
-                window.open("https://telegram.dog/c7yinfobot");
             }
         });
 }
