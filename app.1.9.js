@@ -1,6 +1,3 @@
-// Redesigned by telegram.dog/TheFirstSpeedster at https://www.npmjs.com/package/@googledrive/index which was written by someone else, credits are given on Source Page.
-// v2.2.3
-// Initialize the page
 function init() {
     document.siteName = $('title').html();
     var html = `<header>
@@ -437,8 +434,7 @@ function list(path) {
         successResultCallback,
         function(path) {
             $('#spinner').remove();
-            //var pass = prompt("Locked, Please enter the password :\n", "https://telegram.dog/C7YinfoBot");
-            var pass = prompt("Directory Encrypted, Please Enter The password :", "C7Y Fakes");
+            var pass = prompt("Access Denied! :", "C7Y Fakes");
             localStorage.setItem('password' + path, pass);
             if (pass != null && pass != "") {
                 list(path);
