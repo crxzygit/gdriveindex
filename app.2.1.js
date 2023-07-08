@@ -434,7 +434,7 @@ function list(path) {
         successResultCallback,
         function(path) {
             $('#spinner').remove();
-            var pass = prompt("Access Denied! :", "C7Y Fakes");
+            var pass = prompt("\nAccess Denied\n", "C7Y Fakes");
             localStorage.setItem('password' + path, pass);
             if (pass != null && pass != "") {
                 list(path);
